@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>قرعه کشی بهنام | پارس مشکی</title>
+<title>قرعه کشی بزرگ بهنام | پارس مشکی</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-}
-
-:root{
-    --gold:#e5b94f;
-    --gold-light:#f7dc83;
-    --bg:#050505;
-    --card:#0d0d0d;
-    --border:#30240f;
 }
 
 html{
@@ -27,378 +21,543 @@ html{
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:radial-gradient(circle at 50% -10%,#171205 0,#050505 42%);
+    background:#030303;
     color:#fff;
     line-height:1.8;
-    min-height:100vh;
 }
+
+/* HEADER */
 
 header{
     position:sticky;
     top:0;
-    z-index:20;
-    background:rgba(8,8,8,.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #3c2b0d;
-    padding:15px 6%;
+    z-index:100;
+    height:75px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    background:rgba(3,3,3,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #3a2b0c;
 }
 
 .logo{
-    font-size:21px;
+    font-size:22px;
     font-weight:bold;
 }
 
-.gold{
-    color:var(--gold);
+.logo span{
+    color:#e7bd50;
 }
 
-.nav{
+nav{
     display:flex;
-    gap:10px;
-    align-items:center;
+    gap:30px;
 }
 
-.btn,
-.outline{
-    font-family:inherit;
-    border-radius:10px;
-    padding:11px 19px;
-    cursor:pointer;
-    font-weight:bold;
+nav a{
+    color:#ccc;
+    text-decoration:none;
+    font-size:14px;
     transition:.2s;
 }
 
-.btn{
-    border:none;
-    color:#111;
-    background:linear-gradient(135deg,var(--gold-light),#b9821e);
-    box-shadow:0 5px 20px rgba(229,185,79,.12);
+nav a:hover{
+    color:#e8c45c;
 }
 
-.btn:hover{
-    transform:translateY(-2px);
-    filter:brightness(1.08);
-}
-
-.outline{
-    border:1px solid #92701f;
+.header-btn{
     background:transparent;
-    color:var(--gold);
+    border:1px solid #8f6d1c;
+    color:#e8c45c;
+    padding:9px 25px;
+    border-radius:9px;
+    cursor:pointer;
+    font-family:inherit;
 }
 
-.outline:hover{
-    background:#171207;
-}
+/* HERO */
 
 .hero{
-    max-width:1200px;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    max-width:1250px;
     margin:auto;
-    padding:72px 6%;
-    display:flex;
-    align-items:center;
-    gap:50px;
+    padding:70px 5%;
+    gap:30px;
 }
 
-.hero-text,
-.hero-car{
-    flex:1;
+.hero-text{
+    width:45%;
 }
 
-.hero-car{
-    text-align:center;
-}
-
-.hero-car .car{
-    width:100%;
-    max-width:560px;
-    min-height:300px;
-    border-radius:22px;
-    border:1px solid #4c3912;
-    background:linear-gradient(145deg,#17120a,#080808);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:110px;
-    box-shadow:0 0 80px rgba(210,160,40,.12);
-}
-
-.small-title{
-    color:#d7aa3b;
-    font-size:18px;
-}
-
-.badge{
+.tag{
     display:inline-block;
-    padding:7px 15px;
-    border:1px solid #80611d;
-    border-radius:8px;
-    color:#e8c762;
-    margin-bottom:8px;
+    border:1px solid #80621c;
+    padding:7px 22px;
+    border-radius:30px;
+    color:#e7c15b;
+    margin-bottom:20px;
 }
 
-h1{
-    font-size:clamp(42px,7vw,68px);
-    line-height:1.2;
-    margin:12px 0;
+.hero h1{
+    font-size:clamp(42px,6vw,70px);
+    line-height:1.25;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#e8bd4d;
 }
 
 .hero p{
     color:#aaa;
-    margin-top:18px;
-    max-width:600px;
+    font-size:17px;
+    max-width:550px;
 }
 
-.actions{
+.buttons{
+    margin-top:30px;
     display:flex;
-    gap:12px;
-    margin-top:25px;
+    gap:15px;
     flex-wrap:wrap;
 }
 
-.section{
-    max-width:1150px;
-    margin:25px auto;
-    padding:35px;
-    background:linear-gradient(145deg,#0e0e0e,#090909);
-    border:1px solid var(--border);
-    border-radius:18px;
+.primary{
+    background:linear-gradient(135deg,#f7dc83,#b77d18);
+    color:#111;
+    border:0;
+    padding:14px 30px;
+    border-radius:10px;
+    font-weight:bold;
+    font-family:inherit;
+    cursor:pointer;
+    box-shadow:0 8px 30px rgba(220,170,40,.18);
 }
 
-.section-title{
-    text-align:center;
-    color:#efd47c;
-    margin-bottom:25px;
-    font-size:26px;
+.secondary{
+    background:transparent;
+    color:#e7bd50;
+    border:1px solid #a27a21;
+    padding:13px 28px;
+    border-radius:10px;
+    font-weight:bold;
+    font-family:inherit;
+    cursor:pointer;
 }
+
+/* CAR */
+
+.hero-car{
+    width:55%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.car-box{
+    width:100%;
+    max-width:650px;
+    min-height:390px;
+    border-radius:25px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid #4c3810;
+    background:
+    radial-gradient(circle at 50% 75%,#32250b 0,#0a0804 38%,#030303 75%);
+    box-shadow:
+    0 0 100px rgba(205,155,40,.12),
+    inset 0 0 80px rgba(255,190,50,.04);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/*
+عکس پارس مشکی را با نام pars-black.png
+کنار index.html در GitHub قرار بده.
+*/
+
+.car-box img{
+    width:100%;
+    max-width:630px;
+    display:block;
+    filter:
+    drop-shadow(0 25px 25px rgba(0,0,0,.9))
+    drop-shadow(0 0 35px rgba(210,160,40,.12));
+}
+
+/* STATS */
 
 .stats{
+    max-width:1150px;
+    margin:-10px auto 45px;
+    padding:25px;
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    text-align:center;
+    background:linear-gradient(145deg,#11100d,#080808);
+    border:1px solid #49370f;
+    border-radius:20px;
 }
 
 .stat{
-    padding:20px;
-    border:1px solid #2e2516;
-    border-radius:12px;
-    background:#090909;
+    text-align:center;
+    border-left:1px solid #49370f;
+}
+
+.stat:last-child{
+    border-left:0;
+}
+
+.stat-icon{
+    font-size:30px;
 }
 
 .stat strong{
     display:block;
-    color:var(--gold);
+    font-size:32px;
+    color:#e7bd50;
+}
+
+.stat span{
+    color:#aaa;
+}
+
+/* GENERAL */
+
+.container{
+    max-width:1150px;
+    margin:30px auto;
+    padding:0 20px;
+}
+
+.section{
+    background:linear-gradient(145deg,#10100f,#070707);
+    border:1px solid #3b2d0f;
+    border-radius:20px;
+    padding:35px;
+    margin-bottom:30px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.title h2{
+    color:#e7c15c;
+    font-size:27px;
+}
+
+.title p{
+    color:#777;
+    margin-top:5px;
+}
+
+/* PRIZES */
+
+.prizes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.prize{
+    padding:28px;
+    border:1px solid #35280e;
+    border-radius:15px;
+    text-align:center;
+    background:#080808;
+    transition:.3s;
+}
+
+.prize:hover{
+    transform:translateY(-5px);
+    border-color:#80621c;
+}
+
+.prize-icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.prize h3{
+    color:#e9c45e;
+    margin-bottom:5px;
+}
+
+.prize p{
+    color:#888;
+}
+
+/* REGISTER */
+
+.register{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.info h2{
+    color:#e7bd50;
     font-size:30px;
 }
 
+.info p{
+    color:#999;
+    margin-top:10px;
+}
+
 .form{
-    max-width:620px;
-    margin:auto;
+    border:1px solid #49370f;
+    border-radius:16px;
+    padding:25px;
+    background:#080808;
 }
 
-.field{
-    margin-bottom:14px;
-}
-
-.field label{
+label{
     display:block;
-    color:#ccc;
-    margin-bottom:6px;
+    color:#bbb;
+    margin-bottom:7px;
 }
 
-.field input{
+input{
     width:100%;
     padding:14px;
-    border-radius:10px;
-    border:1px solid #3c2b0d;
-    background:#050505;
-    color:#fff;
-    font:inherit;
+    margin-bottom:15px;
+    background:#030303;
+    color:white;
+    border:1px solid #3b2d0f;
+    border-radius:9px;
     outline:none;
+    font-family:inherit;
 }
 
-.field input:focus{
-    border-color:var(--gold);
+input:focus{
+    border-color:#c89d32;
 }
+
+/* WINNER */
+
+.winner{
+    text-align:center;
+    padding:45px 20px;
+    border:1px solid #49370f;
+    border-radius:18px;
+    background:
+    radial-gradient(circle,#171205,#070707);
+}
+
+.winner-icon{
+    font-size:60px;
+}
+
+.winner h3{
+    color:#e9c45e;
+    font-size:28px;
+    margin:10px;
+}
+
+.winner p{
+    color:#888;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    padding:45px 20px 25px;
+    border-top:1px solid #30240f;
+    text-align:center;
+    color:#777;
+}
+
+.footer-logo{
+    font-size:25px;
+    color:#e8c15a;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.social{
+    margin:20px;
+}
+
+.social span{
+    display:inline-flex;
+    width:42px;
+    height:42px;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #80621c;
+    border-radius:50%;
+    margin:5px;
+    color:#e7bd50;
+}
+
+/* MESSAGE */
 
 .message{
-    margin-top:14px;
-    padding:12px;
-    border-radius:10px;
     display:none;
+    margin-top:15px;
+    padding:12px;
+    border-radius:8px;
     text-align:center;
 }
 
 .success{
     display:block;
-    background:#10200f;
-    color:#b8e8a7;
-    border:1px solid #315226;
+    color:#bde9aa;
+    background:#10200d;
+    border:1px solid #315725;
 }
 
 .error{
     display:block;
-    background:#24100e;
-    color:#ffb1a8;
-    border:1px solid #633027;
+    color:#ffaaa0;
+    background:#220e0c;
+    border:1px solid #5b2823;
 }
 
-.winner{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    align-items:center;
-}
+/* MOBILE */
 
-.winner-box{
-    padding:30px;
-    text-align:center;
-    border:1px solid #4a3813;
-    border-radius:16px;
-    background:radial-gradient(circle,#171205,#080808);
-}
+@media(max-width:850px){
 
-.winner-name{
-    font-size:32px;
-    color:var(--gold);
-    font-weight:bold;
-    margin:10px;
-}
+    header{
+        padding:0 4%;
+    }
 
-.prize-list{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.prize{
-    padding:25px;
-    text-align:center;
-    border:1px solid #2e2516;
-    border-radius:14px;
-}
-
-.prize .icon{
-    font-size:45px;
-}
-
-footer{
-    text-align:center;
-    color:#777;
-    padding:35px 15px;
-    border-top:1px solid #1d170c;
-    margin-top:45px;
-}
-
-@media(max-width:800px){
+    nav{
+        display:none;
+    }
 
     .hero{
         flex-direction:column;
         padding-top:45px;
     }
 
+    .hero-text{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .hero-car{
+        width:100%;
+    }
+
+    .car-box{
+        min-height:270px;
+    }
+
     .stats{
         grid-template-columns:repeat(2,1fr);
+        margin:10px 20px 35px;
     }
 
-    .winner{
+    .stat{
+        padding:15px;
+        border-left:0;
+    }
+
+    .register{
         grid-template-columns:1fr;
     }
 
-    .prize-list{
+    .prizes{
         grid-template-columns:1fr;
     }
 
-    .nav .outline{
-        display:none;
-    }
 }
 
-@media(max-width:480px){
+@media(max-width:450px){
 
-    header{
-        padding:12px 4%;
-    }
-
-    .logo{
-        font-size:17px;
+    .hero h1{
+        font-size:42px;
     }
 
     .section{
-        margin:18px 4%;
         padding:22px;
     }
 
-    .hero{
-        padding-left:4%;
-        padding-right:4%;
+    .stats{
+        margin-left:10px;
+        margin-right:10px;
     }
 
-    .hero-car .car{
-        min-height:220px;
-        font-size:80px;
-    }
 }
+
 </style>
+
 </head>
 
 <body>
 
+
 <header>
 
 <div class="logo">
-قرعه‌کشی <span class="gold">بهنام</span>
+قرعه‌کشی <span>بهنام</span>
 </div>
 
-<nav class="nav">
-<a href="#register">
-<button class="btn">ثبت‌نام</button>
-</a>
+<nav>
+<a href="#home">خانه</a>
+<a href="#prizes">جوایز</a>
+<a href="#register">ثبت‌نام</a>
+<a href="#winner">برنده</a>
 </nav>
+
+<a href="#register">
+<button class="header-btn">
+ثبت‌نام
+</button>
+</a>
 
 </header>
 
 
-<main>
 
-
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-text">
 
-<span class="badge">
-پارس مشکی
-</span>
-
-<div class="small-title">
-قرعه‌کشی ویژه بهنام
+<div class="tag">
+⭐ پارس مشکی
 </div>
 
 <h1>
-شانس خودت را
+قرعه‌کشی بزرگ
 <br>
-<span class="gold">امتحان کن!</span>
+<span>بهنام</span>
 </h1>
 
 <p>
-در قرعه‌کشی شرکت کن، اطلاعاتت را ثبت کن و منتظر اعلام برنده باش.
-طراحی شده برای استفاده آسان در موبایل و کامپیوتر.
+شانس خودت را برای برنده شدن
+یک جایزه ویژه امتحان کن!
+همین حالا در قرعه‌کشی شرکت کن.
 </p>
 
-<div class="actions">
+<div class="buttons">
 
 <a href="#register">
-<button class="btn">
-🎟 ثبت شرکت در قرعه‌کشی
+<button class="primary">
+🎟 ثبت‌نام در قرعه‌کشی
 </button>
 </a>
 
 <a href="#prizes">
-<button class="outline">
-مشاهده جوایز
+<button class="secondary">
+🎁 مشاهده جوایز
 </button>
 </a>
 
@@ -409,8 +568,14 @@ footer{
 
 <div class="hero-car">
 
-<div class="car">
-🚗
+<div class="car-box">
+
+<img
+src="pars-black.png"
+alt="پارس مشکی"
+onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#e7bd50;font-size:80px&quot;>🚗</div>'"
+>
+
 </div>
 
 </div>
@@ -418,52 +583,103 @@ footer{
 </section>
 
 
-
-<section class="section">
-
-<div class="section-title">
-آمار قرعه‌کشی
-</div>
 
 <div class="stats">
 
 <div class="stat">
-<strong id="participants">0</strong>
-<span>شرکت‌کننده</span>
+
+<div class="stat-icon">
+👥
 </div>
+
+<strong id="count">
+0
+</strong>
+
+<span>
+شرکت‌کننده
+</span>
+
+</div>
+
 
 <div class="stat">
-<strong>3</strong>
-<span>برنده</span>
+
+<div class="stat-icon">
+🏆
 </div>
+
+<strong>
+3
+</strong>
+
+<span>
+برنده
+</span>
+
+</div>
+
 
 <div class="stat">
-<strong>100%</strong>
-<span>قرعه‌کشی تصادفی</span>
+
+<div class="stat-icon">
+🛡
 </div>
+
+<strong>
+100%
+</strong>
+
+<span>
+قرعه‌کشی تصادفی
+</span>
+
+</div>
+
 
 <div class="stat">
-<strong>1</strong>
-<span>جایزه ویژه</span>
+
+<div class="stat-icon">
+🎁
+</div>
+
+<strong>
+1
+</strong>
+
+<span>
+جایزه ویژه
+</span>
+
 </div>
 
 </div>
 
-</section>
 
+
+<div class="container">
 
 
 <section class="section" id="prizes">
 
-<div class="section-title">
-جوایز
+<div class="title">
+
+<h2>
+💎 جوایز قرعه‌کشی
+</h2>
+
+<p>
+برای برنده شدن آماده‌ای؟
+</p>
+
 </div>
 
-<div class="prize-list">
+
+<div class="prizes">
 
 <div class="prize">
 
-<div class="icon">
+<div class="prize-icon">
 🏆
 </div>
 
@@ -472,7 +688,7 @@ footer{
 </h3>
 
 <p>
-جایزه ویژه قرعه‌کشی
+جایزه ویژه و ارزشمند
 </p>
 
 </div>
@@ -480,7 +696,7 @@ footer{
 
 <div class="prize">
 
-<div class="icon">
+<div class="prize-icon">
 🥇
 </div>
 
@@ -497,7 +713,7 @@ footer{
 
 <div class="prize">
 
-<div class="icon">
+<div class="prize-icon">
 🎁
 </div>
 
@@ -519,52 +735,61 @@ footer{
 
 <section class="section" id="register">
 
-<div class="section-title">
-ثبت‌نام در قرعه‌کشی
+<div class="register">
+
+<div class="info">
+
+<h2>
+🎟 ثبت‌نام در قرعه‌کشی
+</h2>
+
+<p>
+اطلاعات خودت را وارد کن و در قرعه‌کشی بزرگ بهنام شرکت کن.
+</p>
+
+<br>
+
+<p>
+🔒 اطلاعات شما با امنیت نگهداری خواهد شد.
+</p>
+
 </div>
 
 
-<form class="form" id="entryForm">
+<form class="form" id="form">
 
-
-<div class="field">
-
-<label for="name">
+<label>
 نام و نام خانوادگی
 </label>
 
 <input
 id="name"
-required
+type="text"
 placeholder="مثلاً بهنام احمدی"
+required
 >
 
-</div>
 
-
-<div class="field">
-
-<label for="phone">
+<label>
 شماره موبایل
 </label>
 
 <input
 id="phone"
-required
-inputmode="tel"
+type="tel"
+inputmode="numeric"
 placeholder="09xxxxxxxxx"
+required
 >
-
-</div>
 
 
 <button
-class="btn"
+class="primary"
 style="width:100%;font-size:16px"
 type="submit"
 >
 
-ثبت شرکت در قرعه‌کشی
+🚀 ثبت شرکت در قرعه‌کشی
 
 </button>
 
@@ -574,64 +799,68 @@ id="message"
 class="message"
 ></div>
 
-
 </form>
+
+</div>
 
 </section>
 
 
 
-<section class="section">
+<section class="section" id="winner">
 
-<div class="section-title">
-اعلام برنده
+<div class="title">
+
+<h2>
+👑 اعلام برنده
+</h2>
+
 </div>
 
 <div class="winner">
 
-<div class="winner-box">
-
-<div style="font-size:45px">
+<div class="winner-icon">
 🏆
 </div>
 
-<div
-class="winner-name"
-id="winnerName"
->
-هنوز اعلام نشده
-</div>
-
-<p>
-پس از پایان قرعه‌کشی اعلام می‌شود.
-</p>
-
-</div>
-
-
-<div>
-
-<h3 class="gold">
-شفاف و تصادفی
+<h3>
+هنوز برنده اعلام نشده
 </h3>
 
-<p style="color:#aaa;margin-top:8px">
-نام برنده پس از اجرای قرعه‌کشی در این قسمت نمایش داده می‌شود.
+<p>
+پس از پایان قرعه‌کشی، نام برنده در این قسمت نمایش داده خواهد شد.
 </p>
-
-</div>
 
 </div>
 
 </section>
 
 
-</main>
+</div>
+
 
 
 <footer>
 
-© 2026 قرعه‌کشی بهنام | پارس مشکی
+<div class="footer-logo">
+BEHNAM
+</div>
+
+<p>
+قرعه‌کشی بزرگ بهنام | پارس مشکی
+</p>
+
+<div class="social">
+
+<span>◎</span>
+<span>➤</span>
+<span>☎</span>
+
+</div>
+
+<p>
+© 2026 تمامی حقوق محفوظ است.
+</p>
 
 </footer>
 
@@ -639,40 +868,27 @@ id="winnerName"
 
 <script>
 
-const form =
-document.getElementById("entryForm");
+let count =
+Number(localStorage.getItem("participants") || 0);
 
-const msg =
-document.getElementById("message");
+const countElement =
+document.getElementById("count");
 
-const countEl =
-document.getElementById("participants");
-
-
-let participants =
-Number(
-localStorage.getItem("participantsCount") || 0
-);
+countElement.textContent =
+count.toLocaleString("fa-IR");
 
 
-countEl.textContent =
-participants.toLocaleString("fa-IR");
-
-
-
-form.addEventListener(
-"submit",
-function(e){
+document
+.getElementById("form")
+.addEventListener("submit",function(e){
 
 e.preventDefault();
-
 
 const name =
 document
 .getElementById("name")
 .value
 .trim();
-
 
 const phone =
 document
@@ -681,16 +897,19 @@ document
 .trim()
 .replace(/\s|-/g,"");
 
+const message =
+document.getElementById("message");
+
 
 if(
 !name ||
 !/^09\d{9}$/.test(phone)
 ){
 
-msg.className =
+message.className =
 "message error";
 
-msg.textContent =
+message.textContent =
 "لطفاً نام و شماره موبایل معتبر وارد کنید.";
 
 return;
@@ -698,27 +917,24 @@ return;
 }
 
 
-participants++;
-
+count++;
 
 localStorage.setItem(
-"participantsCount",
-participants
+"participants",
+count
 );
 
+countElement.textContent =
+count.toLocaleString("fa-IR");
 
-countEl.textContent =
-participants.toLocaleString("fa-IR");
-
-
-msg.className =
+message.className =
 "message success";
 
-msg.textContent =
-"ثبت‌نام با موفقیت انجام شد 🎉";
+message.textContent =
+"🎉 ثبت‌نام شما با موفقیت انجام شد!";
 
-
-form.reset();
+document.getElementById("name").value="";
+document.getElementById("phone").value="";
 
 });
 
