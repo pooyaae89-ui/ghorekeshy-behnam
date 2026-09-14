@@ -13,20 +13,34 @@
     padding:0;
 }
 
+:root{
+    --gold:#e5b94f;
+    --gold-light:#f7dc83;
+    --bg:#050505;
+    --card:#0d0d0d;
+    --border:#30240f;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#050505;
+    background:radial-gradient(circle at 50% -10%,#171205 0,#050505 42%);
     color:#fff;
     line-height:1.8;
+    min-height:100vh;
 }
 
 header{
     position:sticky;
     top:0;
-    z-index:10;
-    background:#080808;
+    z-index:20;
+    background:rgba(8,8,8,.95);
+    backdrop-filter:blur(10px);
     border-bottom:1px solid #3c2b0d;
-    padding:18px 6%;
+    padding:15px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -38,51 +52,77 @@ header{
 }
 
 .gold{
-    color:#e5b94f;
+    color:var(--gold);
+}
+
+.nav{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.btn,
+.outline{
+    font-family:inherit;
+    border-radius:10px;
+    padding:11px 19px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.2s;
 }
 
 .btn{
     border:none;
-    border-radius:9px;
-    padding:13px 25px;
-    cursor:pointer;
-    font-weight:bold;
     color:#111;
-    background:linear-gradient(135deg,#f7dc83,#b9821e);
+    background:linear-gradient(135deg,var(--gold-light),#b9821e);
+    box-shadow:0 5px 20px rgba(229,185,79,.12);
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.08);
 }
 
 .outline{
     border:1px solid #92701f;
     background:transparent;
-    color:#e5b94f;
-    border-radius:9px;
-    padding:11px 20px;
-    cursor:pointer;
+    color:var(--gold);
+}
+
+.outline:hover{
+    background:#171207;
 }
 
 .hero{
     max-width:1200px;
     margin:auto;
-    padding:70px 6%;
+    padding:72px 6%;
     display:flex;
     align-items:center;
     gap:50px;
 }
 
-.hero-text{
+.hero-text,
+.hero-car{
     flex:1;
 }
 
 .hero-car{
-    flex:1;
     text-align:center;
 }
 
-.hero-car img{
+.hero-car .car{
     width:100%;
     max-width:560px;
-    border-radius:20px;
-    box-shadow:0 0 80px rgba(210,160,40,.18);
+    min-height:300px;
+    border-radius:22px;
+    border:1px solid #4c3912;
+    background:linear-gradient(145deg,#17120a,#080808);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:110px;
+    box-shadow:0 0 80px rgba(210,160,40,.12);
 }
 
 .small-title{
@@ -90,23 +130,24 @@ header{
     font-size:18px;
 }
 
-h1{
-    font-size:68px;
-    line-height:1.2;
-    margin:15px 0;
-}
-
 .badge{
     display:inline-block;
-    padding:9px 17px;
+    padding:7px 15px;
     border:1px solid #80611d;
     border-radius:8px;
     color:#e8c762;
+    margin-bottom:8px;
+}
+
+h1{
+    font-size:clamp(42px,7vw,68px);
+    line-height:1.2;
+    margin:12px 0;
 }
 
 .hero p{
     color:#aaa;
-    margin-top:20px;
+    margin-top:18px;
     max-width:600px;
 }
 
@@ -121,8 +162,8 @@ h1{
     max-width:1150px;
     margin:25px auto;
     padding:35px;
-    background:#0d0d0d;
-    border:1px solid #30240f;
+    background:linear-gradient(145deg,#0e0e0e,#090909);
+    border:1px solid var(--border);
     border-radius:18px;
 }
 
@@ -130,6 +171,7 @@ h1{
     text-align:center;
     color:#efd47c;
     margin-bottom:25px;
+    font-size:26px;
 }
 
 .stats{
@@ -143,6 +185,545 @@ h1{
     padding:20px;
     border:1px solid #2e2516;
     border-radius:12px;
+    background:#090909;
 }
 
-.stat strong
+.stat strong{
+    display:block;
+    color:var(--gold);
+    font-size:30px;
+}
+
+.form{
+    max-width:620px;
+    margin:auto;
+}
+
+.field{
+    margin-bottom:14px;
+}
+
+.field label{
+    display:block;
+    color:#ccc;
+    margin-bottom:6px;
+}
+
+.field input{
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #3c2b0d;
+    background:#050505;
+    color:#fff;
+    font:inherit;
+    outline:none;
+}
+
+.field input:focus{
+    border-color:var(--gold);
+}
+
+.message{
+    margin-top:14px;
+    padding:12px;
+    border-radius:10px;
+    display:none;
+    text-align:center;
+}
+
+.success{
+    display:block;
+    background:#10200f;
+    color:#b8e8a7;
+    border:1px solid #315226;
+}
+
+.error{
+    display:block;
+    background:#24100e;
+    color:#ffb1a8;
+    border:1px solid #633027;
+}
+
+.winner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    align-items:center;
+}
+
+.winner-box{
+    padding:30px;
+    text-align:center;
+    border:1px solid #4a3813;
+    border-radius:16px;
+    background:radial-gradient(circle,#171205,#080808);
+}
+
+.winner-name{
+    font-size:32px;
+    color:var(--gold);
+    font-weight:bold;
+    margin:10px;
+}
+
+.prize-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.prize{
+    padding:25px;
+    text-align:center;
+    border:1px solid #2e2516;
+    border-radius:14px;
+}
+
+.prize .icon{
+    font-size:45px;
+}
+
+footer{
+    text-align:center;
+    color:#777;
+    padding:35px 15px;
+    border-top:1px solid #1d170c;
+    margin-top:45px;
+}
+
+@media(max-width:800px){
+
+    .hero{
+        flex-direction:column;
+        padding-top:45px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .winner{
+        grid-template-columns:1fr;
+    }
+
+    .prize-list{
+        grid-template-columns:1fr;
+    }
+
+    .nav .outline{
+        display:none;
+    }
+}
+
+@media(max-width:480px){
+
+    header{
+        padding:12px 4%;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .section{
+        margin:18px 4%;
+        padding:22px;
+    }
+
+    .hero{
+        padding-left:4%;
+        padding-right:4%;
+    }
+
+    .hero-car .car{
+        min-height:220px;
+        font-size:80px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+قرعه‌کشی <span class="gold">بهنام</span>
+</div>
+
+<nav class="nav">
+<a href="#register">
+<button class="btn">ثبت‌نام</button>
+</a>
+</nav>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+<div class="hero-text">
+
+<span class="badge">
+پارس مشکی
+</span>
+
+<div class="small-title">
+قرعه‌کشی ویژه بهنام
+</div>
+
+<h1>
+شانس خودت را
+<br>
+<span class="gold">امتحان کن!</span>
+</h1>
+
+<p>
+در قرعه‌کشی شرکت کن، اطلاعاتت را ثبت کن و منتظر اعلام برنده باش.
+طراحی شده برای استفاده آسان در موبایل و کامپیوتر.
+</p>
+
+<div class="actions">
+
+<a href="#register">
+<button class="btn">
+🎟 ثبت شرکت در قرعه‌کشی
+</button>
+</a>
+
+<a href="#prizes">
+<button class="outline">
+مشاهده جوایز
+</button>
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-car">
+
+<div class="car">
+🚗
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<div class="section-title">
+آمار قرعه‌کشی
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<strong id="participants">0</strong>
+<span>شرکت‌کننده</span>
+</div>
+
+<div class="stat">
+<strong>3</strong>
+<span>برنده</span>
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+<span>قرعه‌کشی تصادفی</span>
+</div>
+
+<div class="stat">
+<strong>1</strong>
+<span>جایزه ویژه</span>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section" id="prizes">
+
+<div class="section-title">
+جوایز
+</div>
+
+<div class="prize-list">
+
+<div class="prize">
+
+<div class="icon">
+🏆
+</div>
+
+<h3>
+جایزه اول
+</h3>
+
+<p>
+جایزه ویژه قرعه‌کشی
+</p>
+
+</div>
+
+
+<div class="prize">
+
+<div class="icon">
+🥇
+</div>
+
+<h3>
+جایزه دوم
+</h3>
+
+<p>
+هدیه ارزشمند
+</p>
+
+</div>
+
+
+<div class="prize">
+
+<div class="icon">
+🎁
+</div>
+
+<h3>
+جایزه سوم
+</h3>
+
+<p>
+هدیه ویژه
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section" id="register">
+
+<div class="section-title">
+ثبت‌نام در قرعه‌کشی
+</div>
+
+
+<form class="form" id="entryForm">
+
+
+<div class="field">
+
+<label for="name">
+نام و نام خانوادگی
+</label>
+
+<input
+id="name"
+required
+placeholder="مثلاً بهنام احمدی"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="phone">
+شماره موبایل
+</label>
+
+<input
+id="phone"
+required
+inputmode="tel"
+placeholder="09xxxxxxxxx"
+>
+
+</div>
+
+
+<button
+class="btn"
+style="width:100%;font-size:16px"
+type="submit"
+>
+
+ثبت شرکت در قرعه‌کشی
+
+</button>
+
+
+<div
+id="message"
+class="message"
+></div>
+
+
+</form>
+
+</section>
+
+
+
+<section class="section">
+
+<div class="section-title">
+اعلام برنده
+</div>
+
+<div class="winner">
+
+<div class="winner-box">
+
+<div style="font-size:45px">
+🏆
+</div>
+
+<div
+class="winner-name"
+id="winnerName"
+>
+هنوز اعلام نشده
+</div>
+
+<p>
+پس از پایان قرعه‌کشی اعلام می‌شود.
+</p>
+
+</div>
+
+
+<div>
+
+<h3 class="gold">
+شفاف و تصادفی
+</h3>
+
+<p style="color:#aaa;margin-top:8px">
+نام برنده پس از اجرای قرعه‌کشی در این قسمت نمایش داده می‌شود.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+© 2026 قرعه‌کشی بهنام | پارس مشکی
+
+</footer>
+
+
+
+<script>
+
+const form =
+document.getElementById("entryForm");
+
+const msg =
+document.getElementById("message");
+
+const countEl =
+document.getElementById("participants");
+
+
+let participants =
+Number(
+localStorage.getItem("participantsCount") || 0
+);
+
+
+countEl.textContent =
+participants.toLocaleString("fa-IR");
+
+
+
+form.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+
+const phone =
+document
+.getElementById("phone")
+.value
+.trim()
+.replace(/\s|-/g,"");
+
+
+if(
+!name ||
+!/^09\d{9}$/.test(phone)
+){
+
+msg.className =
+"message error";
+
+msg.textContent =
+"لطفاً نام و شماره موبایل معتبر وارد کنید.";
+
+return;
+
+}
+
+
+participants++;
+
+
+localStorage.setItem(
+"participantsCount",
+participants
+);
+
+
+countEl.textContent =
+participants.toLocaleString("fa-IR");
+
+
+msg.className =
+"message success";
+
+msg.textContent =
+"ثبت‌نام با موفقیت انجام شد 🎉";
+
+
+form.reset();
+
+});
+
+</script>
+
+
+</body>
+</html>
