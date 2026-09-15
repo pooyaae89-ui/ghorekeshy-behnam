@@ -1,1092 +1,747 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>قرعه کشی بزرگ بهنام | پارس مشکی</title>
-
-<style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#030303;
-    color:#fff;
-    line-height:1.8;
-}
-
-/* HEADER */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    height:75px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 6%;
-    background:rgba(3,3,3,.94);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid #3a2b0c;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#e7bd50;
-}
-
-nav{
-    display:flex;
-    gap:30px;
-}
-
-nav a{
-    color:#ccc;
-    text-decoration:none;
-    font-size:14px;
-    transition:.2s;
-}
-
-nav a:hover{
-    color:#e8c45c;
-}
-
-.header-btn{
-    background:transparent;
-    border:1px solid #8f6d1c;
-    color:#e8c45c;
-    padding:9px 25px;
-    border-radius:9px;
-    cursor:pointer;
-    font-family:inherit;
-}
-
-/* HERO */
-
-.hero{
-    min-height:650px;
-    display:flex;
-    align-items:center;
-    max-width:1250px;
-    margin:auto;
-    padding:70px 5%;
-    gap:30px;
-}
-
-.hero-text{
-    width:45%;
-}
-
-.tag{
-    display:inline-block;
-    border:1px solid #80621c;
-    padding:7px 22px;
-    border-radius:30px;
-    color:#e7c15b;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(42px,6vw,70px);
-    line-height:1.25;
-    margin-bottom:15px;
-}
-
-.hero h1 span{
-    color:#e8bd4d;
-}
-
-.hero p{
-    color:#aaa;
-    font-size:17px;
-    max-width:550px;
-}
-
-.buttons{
-    margin-top:30px;
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.primary{
-    background:linear-gradient(135deg,#f7dc83,#b77d18);
-    color:#111;
-    border:0;
-    padding:14px 30px;
-    border-radius:10px;
-    font-weight:bold;
-    font-family:inherit;
-    cursor:pointer;
-    box-shadow:0 8px 30px rgba(220,170,40,.18);
-}
-
-.secondary{
-    background:transparent;
-    color:#e7bd50;
-    border:1px solid #a27a21;
-    padding:13px 28px;
-    border-radius:10px;
-    font-weight:bold;
-    font-family:inherit;
-    cursor:pointer;
-}
-
-/* CAR */
-
-.hero-car{
-    width:55%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.car-box{
-    width:100%;
-    max-width:650px;
-    min-height:390px;
-    border-radius:25px;
-    position:relative;
-    overflow:hidden;
-    border:1px solid #4c3810;
-    background:
-    radial-gradient(circle at 50% 75%,#32250b 0,#0a0804 38%,#030303 75%);
-    box-shadow:
-    0 0 100px rgba(205,155,40,.12),
-    inset 0 0 80px rgba(255,190,50,.04);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.car-box img{
-    width:100%;
-    max-width:630px;
-    display:block;
-    filter:
-    drop-shadow(0 25px 25px rgba(0,0,0,.9))
-    drop-shadow(0 0 35px rgba(210,160,40,.12));
-}
-
-/* STATS */
-
-.stats{
-    max-width:1150px;
-    margin:-10px auto 45px;
-    padding:25px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    background:linear-gradient(145deg,#11100d,#080808);
-    border:1px solid #49370f;
-    border-radius:20px;
-}
-
-.stat{
-    text-align:center;
-    border-left:1px solid #49370f;
-}
-
-.stat:last-child{
-    border-left:0;
-}
-
-.stat-icon{
-    font-size:30px;
-}
-
-.stat strong{
-    display:block;
-    font-size:32px;
-    color:#e7bd50;
-}
-
-.stat span{
-    color:#aaa;
-}
-
-/* GENERAL */
-
-.container{
-    max-width:1150px;
-    margin:30px auto;
-    padding:0 20px;
-}
-
-.section{
-    background:linear-gradient(145deg,#10100f,#070707);
-    border:1px solid #3b2d0f;
-    border-radius:20px;
-    padding:35px;
-    margin-bottom:30px;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.title h2{
-    color:#e7c15c;
-    font-size:27px;
-}
-
-.title p{
-    color:#777;
-    margin-top:5px;
-}
-
-/* PRIZES */
-
-.prizes{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.prize{
-    padding:28px;
-    border:1px solid #35280e;
-    border-radius:15px;
-    text-align:center;
-    background:#080808;
-    transition:.3s;
-}
-
-.prize:hover{
-    transform:translateY(-5px);
-    border-color:#80621c;
-}
-
-.prize-icon{
-    font-size:55px;
-    margin-bottom:10px;
-    min-height:120px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.prize-icon img{
-    width:120px;
-    height:120px;
-    object-fit:contain;
-    display:block;
-    margin:auto;
-}
-
-.prize h3{
-    color:#e9c45e;
-    margin-bottom:5px;
-}
-
-.prize p{
-    color:#888;
-}
-
-/* REGISTER */
-
-.register{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:35px;
-    align-items:center;
-}
-
-.info h2{
-    color:#e7bd50;
-    font-size:30px;
-}
-
-.info p{
-    color:#999;
-    margin-top:10px;
-}
-
-.form{
-    border:1px solid #49370f;
-    border-radius:16px;
-    padding:25px;
-    background:#080808;
-}
-
-label{
-    display:block;
-    color:#bbb;
-    margin-bottom:7px;
-}
-
-input{
-    width:100%;
-    padding:14px;
-    margin-bottom:15px;
-    background:#030303;
-    color:white;
-    border:1px solid #3b2d0f;
-    border-radius:9px;
-    outline:none;
-    font-family:inherit;
-}
-
-input:focus{
-    border-color:#c89d32;
-}
-
-/* WINNER */
-
-.winner{
-    text-align:center;
-    padding:45px 20px;
-    border:1px solid #49370f;
-    border-radius:18px;
-    background:
-    radial-gradient(circle,#171205,#070707);
-}
-
-.winner-icon{
-    font-size:60px;
-}
-
-.winner h3{
-    color:#e9c45e;
-    font-size:28px;
-    margin:10px;
-}
-
-.winner p{
-    color:#888;
-}
-
-/* SUPPORT */
-
-.support-number{
-    color:#e7bd50;
-    font-size:25px;
-    font-weight:bold;
-    direction:ltr;
-    display:inline-block;
-    margin-top:10px;
-}
-
-.support-text{
-    color:#999;
-    margin-bottom:20px;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:60px;
-    padding:45px 20px 25px;
-    border-top:1px solid #30240f;
-    text-align:center;
-    color:#777;
-}
-
-.footer-logo{
-    font-size:25px;
-    color:#e8c15a;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.social{
-    margin:20px;
-}
-
-.social span{
-    display:inline-flex;
-    width:42px;
-    height:42px;
-    align-items:center;
-    justify-content:center;
-    border:1px solid #80621c;
-    border-radius:50%;
-    margin:5px;
-    color:#e7bd50;
-}
-
-/* MESSAGE */
-
-.message{
-    display:none;
-    margin-top:15px;
-    padding:12px;
-    border-radius:8px;
-    text-align:center;
-}
-
-.success{
-    display:block;
-    color:#bde9aa;
-    background:#10200d;
-    border:1px solid #315725;
-}
-
-.error{
-    display:block;
-    color:#ffaaa0;
-    background:#220e0c;
-    border:1px solid #5b2823;
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-    header{
-        padding:0 4%;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        flex-direction:column;
-        padding-top:45px;
-    }
-
-    .hero-text{
-        width:100%;
-        text-align:center;
-    }
-
-    .hero p{
-        margin:auto;
-    }
-
-    .buttons{
-        justify-content:center;
-    }
-
-    .hero-car{
-        width:100%;
-    }
-
-    .car-box{
-        min-height:270px;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-        margin:10px 20px 35px;
-    }
-
-    .stat{
-        padding:15px;
-        border-left:0;
-    }
-
-    .register{
-        grid-template-columns:1fr;
-    }
-
-    .prizes{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:450px){
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .section{
-        padding:22px;
-    }
-
-    .stats{
-        margin-left:10px;
-        margin-right:10px;
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>قرعه‌کشی بزرگ بهنام | پارس مشکی</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #050505;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.95);
+            border-bottom: 1px solid #222;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ddd;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 70px 0;
+            text-align: center;
+            background:
+                radial-gradient(circle at top, #222 0%, #080808 45%, #050505 100%);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .car-image {
+            width: 100%;
+            max-width: 650px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .stat {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 30px;
+            color: #d4af37;
+        }
+
+        .stat span {
+            color: #aaa;
+        }
+
+        /* Sections */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* Prizes */
+        .prizes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .prize-card {
+            background: linear-gradient(145deg, #151515, #0b0b0b);
+            border: 1px solid #292929;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .prize-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.12);
+        }
+
+        .prize-number {
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .prize-icon {
+            min-height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .prize-icon img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            display: block;
+            margin: auto;
+            border-radius: 12px;
+        }
+
+        .emoji-icon {
+            font-size: 75px;
+        }
+
+        .prize-card h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .prize-card p {
+            color: #aaa;
+        }
+
+        /* Form */
+        .form-box {
+            max-width: 600px;
+            margin: auto;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #080808;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #d4af37;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .primary {
+            width: 100%;
+            padding: 14px 20px;
+            background: #d4af37;
+            color: #050505;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .primary:hover {
+            background: #f0cf55;
+            transform: translateY(-2px);
+        }
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            color: #d4af37;
+        }
+
+        /* Winner */
+        .winner-box {
+            max-width: 700px;
+            margin: auto;
+            padding: 35px;
+            text-align: center;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 20px;
+        }
+
+        .winner-box p {
+            color: #aaa;
+        }
+
+        /* Support */
+        .support-box {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            background: linear-gradient(145deg, #151515, #0b0b0b);
+            border: 1px solid #292929;
+            border-radius: 20px;
+            padding: 40px 25px;
+        }
+
+        .support-box p {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .support-number {
+            font-size: 30px;
+            color: #d4af37;
+            font-weight: bold;
+            direction: ltr;
+            margin: 20px 0 30px;
+        }
+
+        .support-box .primary {
+            display: inline-block;
+            width: auto;
+            padding: 12px 25px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #222;
+            padding: 30px 0;
+            text-align: center;
+            color: #777;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .prizes {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Header -->
+    <header>
+        <div class="container nav">
 
-<header>
+            <div class="logo">
+                قرعه‌کشی بهنام
+            </div>
 
-<div class="logo">
-قرعه‌کشی <span>بهنام</span>
-</div>
+            <nav>
+                <a href="#home">خانه</a>
+                <a href="#prizes">جوایز</a>
+                <a href="#register">ثبت‌نام</a>
+                <a href="#winner">برنده</a>
+                <a href="#support">پشتیبانی</a>
+            </nav>
 
-<nav>
-<a href="#home">خانه</a>
-<a href="#prizes">جوایز</a>
-<a href="#register">ثبت‌نام</a>
-<a href="#winner">برنده</a>
-<a href="#support">پشتیبانی</a>
-</nav>
+        </div>
+    </header>
 
-<a href="#register">
-<button class="header-btn">
-ثبت‌نام
-</button>
-</a>
 
-</header>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
 
+            <h1>قرعه‌کشی بزرگ بهنام</h1>
 
+            <p>
+                شانس خود را برای برنده شدن جوایز ویژه امتحان کنید
+            </p>
 
-<section class="hero" id="home">
+            <img
+                src="/pars-black.png"
+                alt="پارس مشکی"
+                class="car-image"
+            >
 
-<div class="hero-text">
+            <div class="stats">
 
-<div class="tag">
-⭐ پارس مشکی
-</div>
+                <div class="stat">
+                    <strong id="participantCount">0</strong>
+                    <span>شرکت‌کننده</span>
+                </div>
 
-<h1>
-قرعه‌کشی بزرگ
-<br>
-<span>بهنام</span>
-</h1>
+                <div class="stat">
+                    <strong>7</strong>
+                    <span>برنده</span>
+                </div>
 
-<p>
-شانس خودت را برای برنده شدن
-یک جایزه ویژه امتحان کن!
-همین حالا در قرعه‌کشی شرکت کن.
-</p>
+                <div class="stat">
+                    <strong>7</strong>
+                    <span>جایزه ویژه</span>
+                </div>
 
-<div class="buttons">
+            </div>
 
-<a href="#register">
-<button class="primary">
-🎟 ثبت‌نام در قرعه‌کشی
-</button>
-</a>
+        </div>
+    </section>
 
-<a href="#prizes">
-<button class="secondary">
-🎁 مشاهده جوایز
-</button>
-</a>
 
-</div>
+    <!-- Prizes -->
+    <section class="section" id="prizes">
+        <div class="container">
 
-</div>
+            <h2 class="section-title">
+                جوایز قرعه‌کشی
+            </h2>
 
+            <div class="prizes">
 
-<div class="hero-car">
+                <!-- Prize 1 -->
+                <div class="prize-card">
 
-<div class="car-box">
+                    <div class="prize-number">
+                        نفر اول
+                    </div>
 
-<img
-src="pars-black.png"
-alt="پارس مشکی"
->
+                    <div class="prize-icon">
+                        <span class="emoji-icon">🏆</span>
+                    </div>
 
-</div>
+                    <h3>پارس مشکی</h3>
+                    <p>جایزه نفر اول</p>
 
-</div>
+                </div>
 
-</section>
 
+                <!-- Prize 2 -->
+                <div class="prize-card">
 
+                    <div class="prize-number">
+                        نفر دوم
+                    </div>
 
-<div class="stats">
+                    <div class="prize-icon">
+                        <span class="emoji-icon">🥈</span>
+                    </div>
 
-<div class="stat">
+                    <h3>پارس مشکی</h3>
+                    <p>جایزه نفر دوم</p>
 
-<div class="stat-icon">
-👥
-</div>
+                </div>
 
-<strong id="count">
-0
-</strong>
 
-<span>
-شرکت‌کننده
-</span>
+                <!-- Prize 3 -->
+                <div class="prize-card">
 
-</div>
+                    <div class="prize-number">
+                        نفر سوم
+                    </div>
 
+                    <div class="prize-icon">
+                        <img
+                            src="/iphone.png.jpg"
+                            alt="گوشی آیفون"
+                        >
+                    </div>
 
-<div class="stat">
+                    <h3>گوشی آیفون</h3>
+                    <p>جایزه نفر سوم</p>
 
-<div class="stat-icon">
-🏆
-</div>
+                </div>
 
-<strong>
-7
-</strong>
 
-<span>
-برنده
-</span>
+                <!-- Prize 4 -->
+                <div class="prize-card">
 
-</div>
+                    <div class="prize-number">
+                        نفر چهارم
+                    </div>
 
+                    <div class="prize-icon">
+                        <img
+                            src="/iphone.png.jpg"
+                            alt="گوشی آیفون"
+                        >
+                    </div>
 
-<div class="stat">
+                    <h3>گوشی آیفون</h3>
+                    <p>جایزه نفر چهارم</p>
 
-<div class="stat-icon">
-🛡
-</div>
+                </div>
 
-<strong>
-100%
-</strong>
 
-<span>
-قرعه‌کشی تصادفی
-</span>
+                <!-- Prize 5 -->
+                <div class="prize-card">
 
-</div>
+                    <div class="prize-number">
+                        نفر پنجم
+                    </div>
 
+                    <div class="prize-icon">
+                        <img
+                            src="/iphone.png.jpg"
+                            alt="گوشی آیفون"
+                        >
+                    </div>
 
-<div class="stat">
+                    <h3>گوشی آیفون</h3>
+                    <p>جایزه نفر پنجم</p>
 
-<div class="stat-icon">
-🎁
-</div>
+                </div>
 
-<strong>
-7
-</strong>
 
-<span>
-جایزه ویژه
-</span>
+                <!-- Prize 6 -->
+                <div class="prize-card">
 
-</div>
+                    <div class="prize-number">
+                        نفر ششم
+                    </div>
 
-</div>
+                    <div class="prize-icon">
+                        <img
+                            src="/iphone.png.jpg"
+                            alt="گوشی آیفون"
+                        >
+                    </div>
 
+                    <h3>گوشی آیفون</h3>
+                    <p>جایزه نفر ششم</p>
 
+                </div>
 
-<div class="container">
 
+                <!-- Prize 7 -->
+                <div class="prize-card">
 
-<section class="section" id="prizes">
+                    <div class="prize-number">
+                        نفر هفتم
+                    </div>
 
-<div class="title">
+                    <div class="prize-icon">
+                        <img
+                            src="/iphone.png.jpg"
+                            alt="گوشی آیفون"
+                        >
+                    </div>
 
-<h2>
-💎 جوایز قرعه‌کشی
-</h2>
+                    <h3>گوشی آیفون</h3>
+                    <p>جایزه نفر هفتم</p>
 
-<p>
-۷ جایزه ویژه برای ۷ برنده
-</p>
+                </div>
 
-</div>
+            </div>
 
+        </div>
+    </section>
 
-<div class="prizes">
 
+    <!-- Register -->
+    <section class="section" id="register">
+        <div class="container">
 
-<div class="prize">
+            <h2 class="section-title">
+                ثبت‌نام در قرعه‌کشی
+            </h2>
 
-<div class="prize-icon">
-🏆
-</div>
+            <div class="form-box">
 
-<h3>
-جایزه نفر اول
-</h3>
+                <form id="registerForm">
 
-<p>
-پارس مشکی
-</p>
+                    <div class="form-group">
+                        <label for="name">
+                            نام و نام خانوادگی
+                        </label>
 
-</div>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="نام خود را وارد کنید"
+                            required
+                        >
+                    </div>
 
 
-<div class="prize">
+                    <div class="form-group">
+                        <label for="phone">
+                            شماره موبایل
+                        </label>
 
-<div class="prize-icon">
-🥈
-</div>
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="مثلاً 09123456789"
+                            required
+                        >
+                    </div>
 
-<h3>
-جایزه نفر دوم
-</h3>
 
-<p>
-پارس مشکی
-</p>
+                    <button
+                        type="submit"
+                        class="primary"
+                    >
+                        ثبت‌نام در قرعه‌کشی
+                    </button>
 
-</div>
+                    <div
+                        class="message"
+                        id="message"
+                    ></div>
 
+                </form>
 
-<div class="prize">
+            </div>
 
-<div class="prize-icon">
-<img src="iphone.png" alt="گوشی آیفون">
-</div>
+        </div>
+    </section>
 
-<h3>
-جایزه نفر سوم
-</h3>
 
-<p>
-گوشی آیفون
-</p>
+    <!-- Winner -->
+    <section class="section" id="winner">
+        <div class="container">
 
-</div>
+            <h2 class="section-title">
+                اعلام برنده
+            </h2>
 
+            <div class="winner-box">
 
-<div class="prize">
+                <h3>
+                    🏆 برندگان به‌زودی اعلام می‌شوند
+                </h3>
 
-<div class="prize-icon">
-<img src="iphone.png" alt="گوشی آیفون">
-</div>
+                <p>
+                    نتیجه قرعه‌کشی در همین بخش قرار خواهد گرفت.
+                </p>
 
-<h3>
-جایزه نفر چهارم
-</h3>
+            </div>
 
-<p>
-گوشی آیفون
-</p>
+        </div>
+    </section>
 
-</div>
 
+    <!-- Support -->
+    <section class="section" id="support">
+        <div class="container">
 
-<div class="prize">
+            <h2 class="section-title">
+                پشتیبانی
+            </h2>
 
-<div class="prize-icon">
-<img src="iphone.png" alt="گوشی آیفون">
-</div>
+            <div class="support-box">
 
-<h3>
-جایزه نفر پنجم
-</h3>
+                <p>
+                    برای ارتباط با پشتیبانی می‌توانید با شماره زیر تماس بگیرید.
+                </p>
 
-<p>
-گوشی آیفون
-</p>
+                <div class="support-number">
+                    09175507988
+                </div>
 
-</div>
+                <a href="tel:09175507988">
+                    <button class="primary">
+                        📞 تماس با پشتیبانی
+                    </button>
+                </a>
 
+            </div>
 
-<div class="prize">
+        </div>
+    </section>
 
-<div class="prize-icon">
-<img src="iphone.png" alt="گوشی آیفون">
-</div>
 
-<h3>
-جایزه نفر ششم
-</h3>
+    <!-- Footer -->
+    <footer>
 
-<p>
-گوشی آیفون
-</p>
+        <div class="container">
 
-</div>
+            <p>
+                © تمامی حقوق محفوظ است | 
+                <strong>قرعه‌کشی بزرگ بهنام</strong>
+            </p>
 
+            <p>
+                پشتیبانی:
+                <strong>09175507988</strong>
+            </p>
 
-<div class="prize">
+        </div>
 
-<div class="prize-icon">
-<img src="iphone.png" alt="گوشی آیفون">
-</div>
+    </footer>
 
-<h3>
-جایزه نفر هفتم
-</h3>
 
-<p>
-گوشی آیفون
-</p>
+    <script>
+        // شمارنده شرکت‌کنندگان
+        let count = localStorage.getItem("participantCount");
 
-</div>
+        if (!count) {
+            count = 0;
+            localStorage.setItem("participantCount", count);
+        }
 
-</div>
+        document.getElementById("participantCount").textContent = count;
 
-</section>
 
+        // ثبت‌نام
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
 
+            event.preventDefault();
 
-<section class="section" id="register">
+            let currentCount =
+                parseInt(localStorage.getItem("participantCount")) || 0;
 
-<div class="register">
+            currentCount++;
 
-<div class="info">
+            localStorage.setItem(
+                "participantCount",
+                currentCount
+            );
 
-<h2>
-🎟 ثبت‌نام در قرعه‌کشی
-</h2>
+            document.getElementById("participantCount").textContent =
+                currentCount;
 
-<p>
-اطلاعات خودت را وارد کن و در قرعه‌کشی بزرگ بهنام شرکت کن.
-</p>
+            document.getElementById("message").textContent =
+                "✅ ثبت‌نام شما با موفقیت انجام شد.";
 
-<br>
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
 
-<p>
-🔒 اطلاعات شما با امنیت نگهداری خواهد شد.
-</p>
-
-</div>
-
-
-<form class="form" id="form">
-
-<label>
-نام و نام خانوادگی
-</label>
-
-<input
-id="name"
-type="text"
-placeholder="مثلاً بهنام احمدی"
-required
->
-
-
-<label>
-شماره موبایل
-</label>
-
-<input
-id="phone"
-type="tel"
-inputmode="numeric"
-placeholder="09xxxxxxxxx"
-required
->
-
-
-<button
-class="primary"
-style="width:100%;font-size:16px"
-type="submit"
->
-
-🚀 ثبت شرکت در قرعه‌کشی
-
-</button>
-
-
-<div
-id="message"
-class="message"
-></div>
-
-</form>
-
-</div>
-
-</section>
-
-
-
-<section class="section" id="winner">
-
-<div class="title">
-
-<h2>
-👑 اعلام برندگان
-</h2>
-
-</div>
-
-<div class="winner">
-
-<div class="winner-icon">
-🏆
-</div>
-
-<h3>
-هنوز برندگان اعلام نشده‌اند
-</h3>
-
-<p>
-پس از پایان قرعه‌کشی، اسامی ۷ برنده در این قسمت نمایش داده خواهد شد.
-</p>
-
-</div>
-
-</section>
-
-
-
-<section class="section" id="support">
-
-<div class="title">
-
-<h2>
-📞 پشتیبانی
-</h2>
-
-<p>
-در صورت داشتن هرگونه سؤال با پشتیبانی تماس بگیرید.
-</p>
-
-</div>
-
-<div class="winner">
-
-<div class="winner-icon">
-☎️
-</div>
-
-<h3>
-تماس با پشتیبانی
-</h3>
-
-<p class="support-text">
-شماره تماس پشتیبانی
-</p>
-
-<div class="support-number">
-09175507988
-</div>
-
-<br>
-<br>
-
-<a href="tel:09175507988">
-
-<button class="primary">
-📞 تماس با پشتیبانی
-</button>
-
-</a>
-
-</div>
-
-</section>
-
-
-</div>
-
-
-
-<footer>
-
-<div class="footer-logo">
-BEHNAM
-</div>
-
-<p>
-قرعه‌کشی بزرگ بهنام | پارس مشکی
-</p>
-
-<div class="social">
-
-<span>◎</span>
-<span>➤</span>
-<span>☎</span>
-
-</div>
-
-<p>
-📞 پشتیبانی: 09175507988
-</p>
-
-<br>
-
-<p>
-© 2026 تمامی حقوق محفوظ است.
-</p>
-
-</footer>
-
-
-
-<script>
-
-let count =
-Number(localStorage.getItem("participants") || 0);
-
-const countElement =
-document.getElementById("count");
-
-countElement.textContent =
-count.toLocaleString("fa-IR");
-
-
-document
-.getElementById("form")
-.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const name =
-document
-.getElementById("name")
-.value
-.trim();
-
-const phone =
-document
-.getElementById("phone")
-.value
-.trim()
-.replace(/\s|-/g,"");
-
-const message =
-document.getElementById("message");
-
-
-if(
-!name ||
-!/^09\d{9}$/.test(phone)
-){
-
-message.className =
-"message error";
-
-message.textContent =
-"لطفاً نام و شماره موبایل معتبر وارد کنید.";
-
-return;
-
-}
-
-
-count++;
-
-localStorage.setItem(
-"participants",
-count
-);
-
-countElement.textContent =
-count.toLocaleString("fa-IR");
-
-message.className =
-"message success";
-
-message.textContent =
-"🎉 ثبت‌نام شما با موفقیت انجام شد!";
-
-document.getElementById("name").value="";
-document.getElementById("phone").value="";
-
-});
-
-</script>
-
+        });
+    </script>
 
 </body>
 </html>
