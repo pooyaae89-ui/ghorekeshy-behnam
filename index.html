@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>قرعه‌کشی بزرگ بهنام | پارس مشکی</title>
+    <title>قرعه‌کشی بزرگ بهنام سالاری</title>
 
     <style>
         * {
@@ -25,28 +25,29 @@
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
         .container {
-            width: 90%;
+            width: 92%;
             max-width: 1100px;
             margin: auto;
         }
 
-        /* Header */
+        /* ================= HEADER ================= */
+
         header {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(5, 5, 5, 0.95);
-            border-bottom: 1px solid #222;
-            backdrop-filter: blur(10px);
+            z-index: 999;
+            background: rgba(5, 5, 5, .94);
+            border-bottom: 1px solid #252525;
+            backdrop-filter: blur(12px);
         }
 
         .nav {
-            min-height: 70px;
+            min-height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -55,306 +56,412 @@
 
         .logo {
             color: #d4af37;
-            font-size: 22px;
+            font-size: 21px;
             font-weight: bold;
+            white-space: nowrap;
         }
 
         nav {
             display: flex;
-            gap: 22px;
-            flex-wrap: wrap;
+            gap: 24px;
         }
 
         nav a {
             color: #ddd;
-            transition: 0.3s;
+            font-size: 14px;
+            transition: .3s;
         }
 
         nav a:hover {
             color: #d4af37;
         }
 
-        /* Hero */
+        /* ================= HERO ================= */
+
         .hero {
-            padding: 70px 0;
+            min-height: 620px;
+            display: flex;
+            align-items: center;
             text-align: center;
+            padding: 70px 0;
             background:
-                radial-gradient(circle at top, #222 0%, #080808 45%, #050505 100%);
+                radial-gradient(circle at 50% 0%, #292929 0%, #0b0b0b 38%, #050505 75%);
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 18px;
+            border: 1px solid #80691e;
+            border-radius: 50px;
+            color: #d4af37;
+            font-size: 13px;
+            margin-bottom: 20px;
+            background: rgba(212,175,55,.06);
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 45px;
             color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
             margin-bottom: 15px;
         }
 
         .hero p {
-            color: #ccc;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .car-image {
-            width: 100%;
-            max-width: 650px;
-            margin: 30px auto;
-            display: block;
-            border-radius: 20px;
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 35px;
-        }
-
-        .stat {
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 15px;
-            padding: 20px;
-        }
-
-        .stat strong {
-            display: block;
-            font-size: 30px;
-            color: #d4af37;
-        }
-
-        .stat span {
             color: #aaa;
+            max-width: 650px;
+            margin: auto;
+            font-size: 16px;
         }
 
-        /* Sections */
-        .section {
-            padding: 70px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            color: #d4af37;
-            font-size: 32px;
-            margin-bottom: 40px;
-        }
-
-        /* Prizes */
-        .prizes {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .prize-card {
-            background: linear-gradient(145deg, #151515, #0b0b0b);
-            border: 1px solid #292929;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .prize-card:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.12);
-        }
-
-        .prize-number {
-            color: #d4af37;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .prize-icon {
-            min-height: 140px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .prize-icon img {
-            width: 120px;
-            height: 120px;
+        .hero-image {
+            width: 100%;
+            max-width: 720px;
+            max-height: 380px;
             object-fit: contain;
             display: block;
-            margin: auto;
-            border-radius: 12px;
-        }
-
-        .emoji-icon {
-            font-size: 75px;
-        }
-
-        .prize-card h3 {
-            font-size: 23px;
-            margin-bottom: 8px;
-        }
-
-        .prize-card p {
-            color: #aaa;
-        }
-
-        /* Form */
-        .form-box {
-            max-width: 600px;
-            margin: auto;
-            background: #101010;
-            border: 1px solid #292929;
+            margin: 35px auto 25px;
             border-radius: 20px;
-            padding: 30px;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,.7));
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        /* ================= BUTTON ================= */
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #ddd;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 14px;
+        .btn {
+            display: inline-block;
+            padding: 13px 30px;
             border-radius: 10px;
-            border: 1px solid #333;
-            background: #080808;
-            color: #fff;
-            font-size: 16px;
-            outline: none;
+            font-weight: bold;
+            transition: .3s;
         }
 
-        .form-group input:focus {
-            border-color: #d4af37;
-        }
-
-        button {
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        .primary {
-            width: 100%;
-            padding: 14px 20px;
+        .btn-gold {
             background: #d4af37;
             color: #050505;
-            font-weight: bold;
-            border-radius: 10px;
-            font-size: 17px;
-            transition: 0.3s;
         }
 
-        .primary:hover {
+        .btn-gold:hover {
             background: #f0cf55;
             transform: translateY(-2px);
         }
 
-        .message {
-            margin-top: 15px;
+        /* ================= STATUS ================= */
+
+        .status {
+            padding: 35px 0;
+            background: #0b0b0b;
+            border-top: 1px solid #191919;
+            border-bottom: 1px solid #191919;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .status-card {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
+        }
+
+        .status-card strong {
+            display: block;
+            color: #d4af37;
+            font-size: 27px;
+        }
+
+        .status-card span {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            color: #d4af37;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .title p {
+            color: #888;
+        }
+
+        /* ================= PRIZE ================= */
+
+        .prize-box {
+            max-width: 850px;
+            margin: auto;
+            background: linear-gradient(145deg, #171717, #0b0b0b);
+            border: 1px solid #302a16;
+            border-radius: 24px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,.3);
+        }
+
+        .prize-image {
+            width: 100%;
+            max-width: 600px;
+            height: 330px;
+            object-fit: contain;
+            margin: auto;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .prize-box h3 {
+            color: #d4af37;
+            font-size: 27px;
+            margin-top: 20px;
+        }
+
+        .prize-box p {
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: #101010;
+            border: 1px solid #262626;
+            border-radius: 18px;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* ================= REGISTER ================= */
+
+        .register-box {
+            max-width: 620px;
+            margin: auto;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #ddd;
+            margin-bottom: 7px;
+        }
+
+        .input-group input {
+            width: 100%;
+            background: #070707;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 14px;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #d4af37;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            padding: 14px;
+            border-radius: 10px;
+            background: #d4af37;
+            color: #050505;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background: #f0cf55;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
             color: #d4af37;
         }
 
-        /* Winner */
-        .winner-box {
-            max-width: 700px;
+        /* ================= WINNER ================= */
+
+        .winner {
+            max-width: 750px;
             margin: auto;
-            padding: 35px;
             text-align: center;
+            padding: 45px 25px;
+            border-radius: 20px;
+            background:
+                linear-gradient(145deg, #161616, #0a0a0a);
+            border: 1px solid #302a16;
+        }
+
+        .winner-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .winner h3 {
+            color: #d4af37;
+            font-size: 25px;
+        }
+
+        .winner p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* ================= SUPPORT ================= */
+
+        .support {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            padding: 40px 25px;
             background: #101010;
             border: 1px solid #292929;
             border-radius: 20px;
         }
 
-        .winner-box p {
-            color: #aaa;
+        .support h3 {
+            color: #d4af37;
+            font-size: 25px;
         }
 
-        /* Support */
-        .support-box {
-            max-width: 650px;
-            margin: auto;
+        .support p {
+            color: #999;
+            margin: 10px 0 20px;
+        }
+
+        .phone {
+            direction: ltr;
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 0;
+            border-top: 1px solid #222;
+            background: #030303;
             text-align: center;
-            background: linear-gradient(145deg, #151515, #0b0b0b);
-            border: 1px solid #292929;
-            border-radius: 20px;
-            padding: 40px 25px;
         }
 
-        .support-box p {
-            color: #bbb;
-            margin-bottom: 20px;
-        }
-
-        .support-number {
-            font-size: 30px;
+        footer .footer-logo {
             color: #d4af37;
             font-weight: bold;
-            direction: ltr;
-            margin: 20px 0 30px;
+            font-size: 20px;
+            margin-bottom: 8px;
         }
 
-        .support-box .primary {
-            display: inline-block;
-            width: auto;
-            padding: 12px 25px;
+        footer p {
+            color: #666;
+            font-size: 13px;
         }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid #222;
-            padding: 30px 0;
-            text-align: center;
-            color: #777;
-        }
+        /* ================= MOBILE ================= */
 
-        footer strong {
-            color: #d4af37;
-        }
+        @media (max-width: 750px) {
 
-        /* Responsive */
-        @media (max-width: 700px) {
-            .hero {
-                padding: 50px 0;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .prizes {
-                grid-template-columns: 1fr;
+            .nav {
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px 0;
             }
 
             nav {
-                gap: 12px;
-                font-size: 14px;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
             }
 
-            .logo {
-                font-size: 17px;
+            .hero {
+                min-height: auto;
+                padding: 55px 0;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero-image {
+                max-height: 280px;
+            }
+
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
             }
 
             .section {
-                padding: 50px 0;
+                padding: 55px 0;
             }
 
-            .section-title {
-                font-size: 27px;
+            .prize-box {
+                padding: 20px;
+            }
+
+            .prize-image {
+                height: 250px;
             }
         }
     </style>
@@ -362,18 +469,18 @@
 
 <body>
 
-    <!-- Header -->
+    <!-- HEADER -->
     <header>
         <div class="container nav">
 
             <div class="logo">
-                قرعه‌کشی بهنام
+                قرعه‌کشی بزرگ بهنام سالاری
             </div>
 
             <nav>
                 <a href="#home">خانه</a>
-                <a href="#prizes">جوایز</a>
-                <a href="#register">ثبت‌نام</a>
+                <a href="#prize">جایزه</a>
+                <a href="#register">ثبت اطلاعات</a>
                 <a href="#winner">برنده</a>
                 <a href="#support">پشتیبانی</a>
             </nav>
@@ -382,37 +489,60 @@
     </header>
 
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero" id="home">
-        <div class="container">
+        <div class="container hero-content">
 
-            <h1>قرعه‌کشی بزرگ بهنام</h1>
+            <span class="badge">
+                🎁 یک فرصت ویژه
+            </span>
+
+            <h1>
+                قرعه‌کشی بزرگ
+            </h1>
+
+            <h2>
+                بهنام سالاری
+            </h2>
 
             <p>
-                شانس خود را برای برنده شدن جوایز ویژه امتحان کنید
+                در این طرح، اطلاعات خود را ثبت کنید و از آخرین اخبار
+                و نتایج طرح باخبر شوید.
             </p>
 
             <img
                 src="/pars-black.png"
                 alt="پارس مشکی"
-                class="car-image"
+                class="hero-image"
             >
 
-            <div class="stats">
+            <a href="#register" class="btn btn-gold">
+                مشاهده جزئیات
+            </a>
 
-                <div class="stat">
-                    <strong id="participantCount">0</strong>
-                    <span>شرکت‌کننده</span>
+        </div>
+    </section>
+
+
+    <!-- STATUS -->
+    <section class="status">
+        <div class="container">
+
+            <div class="status-grid">
+
+                <div class="status-card">
+                    <strong>۷</strong>
+                    <span>جایزه</span>
                 </div>
 
-                <div class="stat">
-                    <strong>7</strong>
+                <div class="status-card">
+                    <strong>۷</strong>
                     <span>برنده</span>
                 </div>
 
-                <div class="stat">
-                    <strong>7</strong>
-                    <span>جایزه ویژه</span>
+                <div class="status-card">
+                    <strong id="participantCount">۰</strong>
+                    <span>ثبت اطلاعات</span>
                 </div>
 
             </div>
@@ -421,168 +551,98 @@
     </section>
 
 
-    <!-- Prizes -->
-    <section class="section" id="prizes">
+    <!-- PRIZE -->
+    <section class="section" id="prize">
+
         <div class="container">
 
-            <h2 class="section-title">
-                جوایز قرعه‌کشی
-            </h2>
+            <div class="title">
+                <h2>جایزه ویژه</h2>
+                <p>جایزه اصلی طرح</p>
+            </div>
 
-            <div class="prizes">
+            <div class="prize-box">
 
-                <!-- Prize 1 -->
-                <div class="prize-card">
+                <img
+                    src="/pars-black.png"
+                    alt="پارس مشکی"
+                    class="prize-image"
+                >
 
-                    <div class="prize-number">
-                        نفر اول
-                    </div>
+                <h3>
+                    پارس مشکی
+                </h3>
 
-                    <div class="prize-icon">
-                        <span class="emoji-icon">🏆</span>
-                    </div>
+                <p>
+                    جایزه ویژه قرعه‌کشی بزرگ بهنام سالاری
+                </p>
 
-                    <h3>پارس مشکی</h3>
-                    <p>جایزه نفر اول</p>
+            </div>
 
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="section">
+
+        <div class="container">
+
+            <div class="title">
+                <h2>جزئیات طرح</h2>
+                <p>اطلاعات مهم را قبل از ثبت اطلاعات مطالعه کنید</p>
+            </div>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="feature-icon">🎁</div>
+                    <h3>جوایز ویژه</h3>
+                    <p>
+                        جوایز اعلام‌شده در صفحه طرح نمایش داده می‌شوند.
+                    </p>
                 </div>
 
-
-                <!-- Prize 2 -->
-                <div class="prize-card">
-
-                    <div class="prize-number">
-                        نفر دوم
-                    </div>
-
-                    <div class="prize-icon">
-                        <span class="emoji-icon">🥈</span>
-                    </div>
-
-                    <h3>پارس مشکی</h3>
-                    <p>جایزه نفر دوم</p>
-
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>ثبت اطلاعات</h3>
+                    <p>
+                        اطلاعات موردنیاز را با دقت وارد کنید.
+                    </p>
                 </div>
 
-
-                <!-- Prize 3 -->
-                <div class="prize-card">
-
-                    <div class="prize-number">
-                        نفر سوم
-                    </div>
-
-                    <div class="prize-icon">
-                        <img
-                            src="/iphone.png.jpg"
-                            alt="گوشی آیفون"
-                        >
-                    </div>
-
-                    <h3>گوشی آیفون</h3>
-                    <p>جایزه نفر سوم</p>
-
-                </div>
-
-
-                <!-- Prize 4 -->
-                <div class="prize-card">
-
-                    <div class="prize-number">
-                        نفر چهارم
-                    </div>
-
-                    <div class="prize-icon">
-                        <img
-                            src="/iphone.png.jpg"
-                            alt="گوشی آیفون"
-                        >
-                    </div>
-
-                    <h3>گوشی آیفون</h3>
-                    <p>جایزه نفر چهارم</p>
-
-                </div>
-
-
-                <!-- Prize 5 -->
-                <div class="prize-card">
-
-                    <div class="prize-number">
-                        نفر پنجم
-                    </div>
-
-                    <div class="prize-icon">
-                        <img
-                            src="/iphone.png.jpg"
-                            alt="گوشی آیفون"
-                        >
-                    </div>
-
-                    <h3>گوشی آیفون</h3>
-                    <p>جایزه نفر پنجم</p>
-
-                </div>
-
-
-                <!-- Prize 6 -->
-                <div class="prize-card">
-
-                    <div class="prize-number">
-                        نفر ششم
-                    </div>
-
-                    <div class="prize-icon">
-                        <img
-                            src="/iphone.png.jpg"
-                            alt="گوشی آیفون"
-                        >
-                    </div>
-
-                    <h3>گوشی آیفون</h3>
-                    <p>جایزه نفر ششم</p>
-
-                </div>
-
-
-                <!-- Prize 7 -->
-                <div class="prize-card">
-
-                    <div class="prize-number">
-                        نفر هفتم
-                    </div>
-
-                    <div class="prize-icon">
-                        <img
-                            src="/iphone.png.jpg"
-                            alt="گوشی آیفون"
-                        >
-                    </div>
-
-                    <h3>گوشی آیفون</h3>
-                    <p>جایزه نفر هفتم</p>
-
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>اعلام نتیجه</h3>
+                    <p>
+                        نتیجه در بخش برندگان سایت اعلام خواهد شد.
+                    </p>
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- Register -->
+    <!-- REGISTER -->
     <section class="section" id="register">
+
         <div class="container">
 
-            <h2 class="section-title">
-                ثبت‌نام در قرعه‌کشی
-            </h2>
+            <div class="title">
+                <h2>ثبت اطلاعات</h2>
+                <p>فرم زیر را تکمیل کنید</p>
+            </div>
 
-            <div class="form-box">
+            <div class="register-box">
 
                 <form id="registerForm">
 
-                    <div class="form-group">
+                    <div class="input-group">
+
                         <label for="name">
                             نام و نام خانوادگی
                         </label>
@@ -590,13 +650,15 @@
                         <input
                             type="text"
                             id="name"
-                            placeholder="نام خود را وارد کنید"
+                            placeholder="نام و نام خانوادگی"
                             required
                         >
+
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="input-group">
+
                         <label for="phone">
                             شماره موبایل
                         </label>
@@ -604,99 +666,111 @@
                         <input
                             type="tel"
                             id="phone"
-                            placeholder="مثلاً 09123456789"
+                            placeholder="09123456789"
                             required
                         >
+
                     </div>
 
 
                     <button
                         type="submit"
-                        class="primary"
+                        class="submit-btn"
                     >
-                        ثبت‌نام در قرعه‌کشی
+                        ثبت اطلاعات
                     </button>
 
-                    <div
-                        class="message"
-                        id="message"
-                    ></div>
+                    <div id="message"></div>
 
                 </form>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- Winner -->
+    <!-- WINNER -->
     <section class="section" id="winner">
+
         <div class="container">
 
-            <h2 class="section-title">
-                اعلام برنده
-            </h2>
+            <div class="title">
+                <h2>برنده</h2>
+                <p>نتیجه طرح</p>
+            </div>
 
-            <div class="winner-box">
+            <div class="winner">
+
+                <div class="winner-icon">
+                    🏆
+                </div>
 
                 <h3>
-                    🏆 برندگان به‌زودی اعلام می‌شوند
+                    نتیجه به‌زودی اعلام می‌شود
                 </h3>
 
                 <p>
-                    نتیجه قرعه‌کشی در همین بخش قرار خواهد گرفت.
+                    پس از اعلام نتیجه، اطلاعات برنده در این قسمت نمایش داده خواهد شد.
                 </p>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- Support -->
+    <!-- SUPPORT -->
     <section class="section" id="support">
+
         <div class="container">
 
-            <h2 class="section-title">
-                پشتیبانی
-            </h2>
+            <div class="title">
+                <h2>پشتیبانی</h2>
+                <p>در صورت نیاز با پشتیبانی تماس بگیرید</p>
+            </div>
 
-            <div class="support-box">
+            <div class="support">
+
+                <h3>
+                    📞 پشتیبانی
+                </h3>
 
                 <p>
-                    برای ارتباط با پشتیبانی می‌توانید با شماره زیر تماس بگیرید.
+                    برای دریافت راهنمایی می‌توانید با شماره زیر تماس بگیرید.
                 </p>
 
-                <div class="support-number">
+                <div class="phone">
                     09175507988
                 </div>
 
-                <a href="tel:09175507988">
-                    <button class="primary">
-                        📞 تماس با پشتیبانی
-                    </button>
+                <a
+                    href="tel:09175507988"
+                    class="btn btn-gold"
+                >
+                    تماس با پشتیبانی
                 </a>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
 
         <div class="container">
 
-            <p>
-                © تمامی حقوق محفوظ است | 
-                <strong>قرعه‌کشی بزرگ بهنام</strong>
-            </p>
+            <div class="footer-logo">
+                قرعه‌کشی بزرگ بهنام سالاری
+            </div>
 
             <p>
-                پشتیبانی:
-                <strong>09175507988</strong>
+                تمامی حقوق محفوظ است.
             </p>
 
         </div>
@@ -704,43 +778,40 @@
     </footer>
 
 
+    <!-- SCRIPT -->
     <script>
-        // شمارنده شرکت‌کنندگان
-        let count = localStorage.getItem("participantCount");
 
-        if (!count) {
-            count = 0;
-            localStorage.setItem("participantCount", count);
-        }
+        let count =
+            parseInt(localStorage.getItem("participantCount")) || 0;
 
-        document.getElementById("participantCount").textContent = count;
+        document.getElementById("participantCount").textContent =
+            count.toLocaleString("fa-IR");
 
 
-        // ثبت‌نام
-        document.getElementById("registerForm").addEventListener("submit", function(event) {
+        document
+            .getElementById("registerForm")
+            .addEventListener("submit", function(event) {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            let currentCount =
-                parseInt(localStorage.getItem("participantCount")) || 0;
+                count++;
 
-            currentCount++;
+                localStorage.setItem(
+                    "participantCount",
+                    count
+                );
 
-            localStorage.setItem(
-                "participantCount",
-                currentCount
-            );
+                document.getElementById("participantCount").textContent =
+                    count.toLocaleString("fa-IR");
 
-            document.getElementById("participantCount").textContent =
-                currentCount;
+                document.getElementById("message").textContent =
+                    "✅ اطلاعات با موفقیت ثبت شد.";
 
-            document.getElementById("message").textContent =
-                "✅ ثبت‌نام شما با موفقیت انجام شد.";
+                document.getElementById("name").value = "";
+                document.getElementById("phone").value = "";
 
-            document.getElementById("name").value = "";
-            document.getElementById("phone").value = "";
+            });
 
-        });
     </script>
 
 </body>
